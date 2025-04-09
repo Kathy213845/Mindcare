@@ -1,0 +1,345 @@
+:root {
+    --blanco: #ffffff;
+    --negro: #000000;
+    --gris: #a2a2a2;
+    --azul-turquesa: #5ce1e6;
+    --barra:#afc7ef; 
+    --titulo: "Chau Philomene One", sans-serif;
+    --fuenteParrafos: "Trocchi", serif;
+    --navegacion: "Noto Serif", serif;
+ 
+}
+html {/*ESTO SIEMPRE DEBE DE IR EN TODOS LOS PROYECTOS*/
+    box-sizing: border-box; /*Para que no afecte el ancho de nuestros elementos*/
+    font-size: 62.5%; /*1 rem = 10px*/
+    
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}/*------------------------------------------------------------------*/
+body {
+    font-family: var(--fuenteParrafos);
+    background-color: var(--negro);
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+ h2, h3, h4 {
+    font-family: var(--fuenteParrafos);
+    line-height: 1.2rem;
+    
+}
+h1 {
+    font-size: 4.8rem;
+}
+p{
+    font-size: 2.8rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+.header {
+    background-color: var(--blanco);
+    padding: 0.5rem;
+    width: 100%;
+    position: relative;
+    bottom: 3rem;  
+    
+}
+
+
+.navegacion{
+    display: flex;/*Activa el modelo de diseño flexible*/
+    flex-direction:row; /*Direccion en columna*/
+    justify-content:space-between;
+ 
+}
+.navegacion a:hover{
+    background-color: var(--azul-turquesa); /* Cambia el fondo al pasar el mouse */
+    color: var(--blanco); /* Cambia el color del texto */
+   
+}
+
+.navegacion__enlace {
+    display: block;/*Nosotros, Cursos y Contacto queda uno debajo del otro en un celular*/
+    font-family: var(--navegacion);
+    text-align: center;
+    color: var(--negro);
+    text-transform: uppercase;/*Letra en mayuscula*/
+    padding: 3rem;
+     
+}
+
+.navegacion__sesion{
+    display: flex;
+    align-items:center;
+    align-self:baseline;
+    font-family: var(--navegacion);
+    text-align: center;
+    color: var(--negro);
+    text-transform: uppercase;/*Letra en mayuscula*/
+    padding: 1rem;
+   
+}
+
+.sesion{
+    display: flex;
+    justify-content: end;
+    align-items:end;
+}
+
+.usuario{
+    display: grid;
+    grid-template-areas: "usuario"
+                         "inicio";
+}
+
+.usuario svg {
+    grid-area: usuario;
+
+}
+
+.usuario .navegacion__sesion{
+    grid-area: inicio;
+
+}
+
+.principal__contenido{
+    display: grid;
+    grid-template-areas: "logo titulo titulo"
+                         "texto texto imagen";
+
+}
+
+.principal__contenido .principal__logo{
+    grid-area: logo;
+}
+
+.principal__contenido .principal__titulo{
+    grid-area: titulo;
+}
+
+.principal__contenido .principal__texto{
+    grid-area: texto;
+}
+
+.principal__contenido .principal__imagen{
+    grid-area: imagen;
+}
+
+.principal__titulo {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--blanco);
+    display: flex;
+    justify-content: center;
+    padding: 5rem;
+   
+}
+
+.principal__logo {
+    border-radius: 50%;
+    width: 20rem;
+    height: auto;
+    
+
+}
+@media (max-width: 768px) {
+    .principal__contenido {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .principal__texto {
+      text-align: center;
+    }
+  }
+
+  
+
+  .principal__texto {
+    
+    color: var(--blanco);
+    text-align: center;
+  }
+  
+  .imagen-redonda {
+    width: 60rem;
+    height: 60rem;
+    border-radius: 50%;
+    object-fit: cover;
+    
+  }
+.principal__boton  {
+    background-color: var(--gris);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-top: 2rem;   
+}
+.principal__boton1{
+    color: var(--negro);
+}
+.principal__boton a:hover{
+    background-color: var(--azul-turquesa); /* Cambia el fondo al pasar el mouse */
+    
+   
+}
+
+.principal__calificacion {
+    font-size: 5rem;
+    padding: 5rem;
+
+}
+
+
+footer {
+    background-color: var(--blanco);
+    padding: 0.5rem;
+    margin-top: 5rem; /* separación del azul */
+    border-bottom: 10px solid var(--gris); /* línea superior gris */
+    font-family: var(--fuenteParrafos);
+    font-size: 1.5rem;
+    color: var(--negro);
+  }
+  
+  .footer__social ul,
+  .footer__contact,
+  .footer__logo {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer__container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .footer__logo img {
+    border-radius: 50%;
+    width: 10rem;
+    height: auto;
+  }
+  
+  .footer__contact h3,
+  .footer__social h3 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+  }
+  
+  .footer__contact li,
+  .footer__social li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .footer__contact li svg,
+  .footer__social li svg {
+    margin-right: 1rem;
+  }
+  
+  .footer__social a,
+  .footer__contact a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.5rem;
+  }
+  
+  .footer__copyright {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: bold;
+   
+  }
+
+
+/* Adaptaciones para pantallas más pequeñas (Opcional) */
+@media (max-width: 768px) {
+    .principal {
+        flex-direction: column;/*Los elementos hijos del footer (logo, contacto, social) se apilan verticalmente.*/
+        text-align: center;
+    }
+
+    .principal__contenido {
+        max-width: 100%;
+        padding-right: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .principal__imagen {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer > div {
+        margin-bottom:5rem;
+    }
+}
+
+/*SOBRE NOSOTROS*/
+.section-banner {
+    background-color:var(--gris); 
+    padding: 2rem 0;
+    text-align: center;
+    position: relative;
+    
+  }
+
+.logo-container {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    margin-top: -90px; /* esto hace que suba y se monte sobre el gris */
+    z-index: 2;
+  }
+
+.section-banner h1 {
+    color: var(--blanco);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: var(--navegacion);
+  }
+.parrafo{
+    color: var(--blanco);
+    text-align: center;
+}
+.section {
+    background-color: var(--barra);
+    border-bottom: 10px solid transparent; 
+    display: flex;
+    justify-content: center;
+   
+}
+.section h2, p{
+    text-align: center;
+}
+
+
+.sub{
+    font-family: var(--fuenteParrafos);
+    font-size: 3rem;
+}
+
+  
+
